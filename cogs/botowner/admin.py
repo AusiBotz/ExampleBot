@@ -13,9 +13,11 @@ class Help(commands.Cog):
     async def on_ready(self):
         print("help.py was loaded")
 
-    @slash_command(name="help")
+    admin = SlashCommandGroup(name="botowner", description="Bot Owner Commands")
+
+    @admin.command(name="help")
     async def _help(self, ctx: discord.ApplicationContext):
-        await ctx.respond("Help successfully")
+        await ctx.respond("Admin Help successfully")
 
 def setup(bot: commands.Bot):
     bot.add_cog(Help(bot))
