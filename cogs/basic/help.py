@@ -6,7 +6,7 @@ from discord.ext.pages import Paginator, Page, PageGroup
 import ezcord
 
 
-class Help(commands.Cog):
+class HelpCog(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
 
@@ -18,5 +18,6 @@ class Help(commands.Cog):
     async def _help(self, ctx: discord.ApplicationContext):
         await ctx.respond("Help successfully")
 
+
 def setup(bot: commands.Bot):
-    bot.add_cog(Help(bot))
+    bot.add_cog(HelpCog(bot))
